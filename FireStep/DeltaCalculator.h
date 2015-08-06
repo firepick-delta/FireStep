@@ -133,6 +133,9 @@ public:
     inline PH5TYPE getZOffset() { // Z distance from base to effector with arms level (0 degrees)
         return dz;
     }
+    inline void setZOffset(PH5TYPE zOffs) {
+        dz = zOffs;
+    }
     PH5TYPE getMinZ(PH5TYPE x=0, PH5TYPE y=0);  // lowest possible point at given XY
     PH5TYPE getMinDegrees(); // base/effector arms are colinear here (which is usually bad mechanically)
     Step3D getHomePulses();

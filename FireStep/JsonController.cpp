@@ -1771,6 +1771,7 @@ Status JsonController::processDimension_MTO_FPD(JsonCommand& jcmd, JsonObject& j
             node["re"] = "";
             node["rf"] = "";
             node["st"] = "";
+            node["zo"] = "";
         }
         JsonObject& kidObj = jobj[key];
         if (kidObj.success()) {
@@ -1781,6 +1782,10 @@ Status JsonController::processDimension_MTO_FPD(JsonCommand& jcmd, JsonObject& j
                 }
             }
         }
+    } else if (strcmp("zo", key) == 0 || strcmp("zoffset", key) == 0) {
+        PH5TYPE value = machine.delta.getZOffset();
+        status = processField<PH5TYPE, PH5TYPE>(jobj, key, value);
+        machine.delta.setZOffset(value);
     } else if (strcmp("e", key) == 0 || strcmp("dime", key) == 0) {
         PH5TYPE value = machine.delta.getEffectorTriangleSide();
         status = processField<PH5TYPE, PH5TYPE>(jobj, key, value);
