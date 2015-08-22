@@ -5,6 +5,7 @@
 #include "Arduino.h"
 #include "MachineThread.h"
 #include "NeoPixel.h"
+#include <SoftPWM.h>
 
 ///////////////////// CHOOSE DEFAULT PIN CONFIGURATION ///////////
 //#define PIN_CONFIG PC2_RAMPS_1_4
@@ -28,6 +29,9 @@ void setup() { // run once, when the sketch starts
     //Serial.begin(38400); // short USB cables
     Serial.begin(19200); // long USB cables
 
+    // Initialize soft-pwm library (used for quieting vacuum pump motor, primarily)
+    SoftPWMBegin();
+    
     // Bind in NeoPixel display driver
     machineThread.machine.pDisplay = &neoPixel;
 

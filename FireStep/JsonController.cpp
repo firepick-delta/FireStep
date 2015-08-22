@@ -5,7 +5,8 @@
 #endif
 #include "version.h"
 #include "JsonController.h"
-
+#include <SoftPWM.h>
+ 
 using namespace firestep;
 
 JsonController::JsonController(Machine& machine)
@@ -1170,8 +1171,10 @@ Status JsonController::processIOPin(JsonCommand& jcmd, JsonObject& jobj, const c
             if (value < 0 || 255 < value) {
                 return jcmd.setError(STATUS_JSON_255, key);
             }
-            pinMode(pin+A0, OUTPUT);
-            analogWrite(pin+A0, (int16_t) value);
+            //NJ 2015-08-22
+            pinMode(pin, OUTPUT);
+            SoftPWMSet(pin,value,0);
+            //analogWrite(pin+A0, (int16_t) value);
         } else {
             return jcmd.setError(STATUS_JSON_255, key);
         }
