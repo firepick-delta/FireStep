@@ -1,0 +1,143 @@
+\hypertarget{classfirestep_1_1_json_controller}{\section{firestep\+:\+:Json\+Controller Class Reference}
+\label{classfirestep_1_1_json_controller}\index{firestep\+::\+Json\+Controller@{firestep\+::\+Json\+Controller}}
+}
+
+
+Inheritance diagram for firestep\+:\+:Json\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{classfirestep_1_1_json_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for firestep\+:\+:Json\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfirestep_1_1_json_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfirestep_1_1_json_controller_aa99c033aaa8cd12b4ca02eb095309cba}{{\bfseries Json\+Controller} (\hyperlink{classfirestep_1_1_machine}{Machine} \&machine)}\label{classfirestep_1_1_json_controller_aa99c033aaa8cd12b4ca02eb095309cba}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_ab896ca30795d53a2b1dbb4f6512bcab4}{void {\bfseries send\+Response} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Status status, bool final=true)}\label{classfirestep_1_1_json_controller_ab896ca30795d53a2b1dbb4f6512bcab4}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a81ace494431cde7ddeaf6b2004f389b5}{Status {\bfseries process\+Obj} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj)}\label{classfirestep_1_1_json_controller_a81ace494431cde7ddeaf6b2004f389b5}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_ae07fb11355da2ca9b32623ed1265718a}{\hyperlink{classfirestep_1_1_json_controller}{Json\+Controller} \& {\bfseries operator=} (\hyperlink{classfirestep_1_1_json_controller}{Json\+Controller} \&that)}\label{classfirestep_1_1_json_controller_ae07fb11355da2ca9b32623ed1265718a}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a0a117c0ce47f5c0304b5aa0153077ee1}{Status {\bfseries cancel} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Status cause)}\label{classfirestep_1_1_json_controller_a0a117c0ce47f5c0304b5aa0153077ee1}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a51e5351248ad28d3c40c9befd49d879a}{virtual void {\bfseries on\+Topology\+Changed} ()}\label{classfirestep_1_1_json_controller_a51e5351248ad28d3c40c9befd49d879a}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a86a2069cce59a7465db39587a912025f}{virtual const char $\ast$ {\bfseries name} ()=0}\label{classfirestep_1_1_json_controller_a86a2069cce59a7465db39587a912025f}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfirestep_1_1_json_controller_af7d36ec60276471ee6b57d857778aa28}{Axis\+Index {\bfseries axis\+Of} (char c)}\label{classfirestep_1_1_json_controller_af7d36ec60276471ee6b57d857778aa28}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a5c1043d5d57d4e1d9c9a77f35d0aeca6}{virtual Status {\bfseries initialize\+Home} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key, bool clear)=0}\label{classfirestep_1_1_json_controller_a5c1043d5d57d4e1d9c9a77f35d0aeca6}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a239c567f49d1b693fcdc5ee8399bceed}{virtual Status {\bfseries initialize\+Stroke} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&stroke)}\label{classfirestep_1_1_json_controller_a239c567f49d1b693fcdc5ee8399bceed}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a55dccd5b44896199a0d29d5e8e9e6493}{virtual Status {\bfseries process\+Axis} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key, char group)}\label{classfirestep_1_1_json_controller_a55dccd5b44896199a0d29d5e8e9e6493}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a98972901221d243c92e1344adab52d29}{virtual Status {\bfseries process\+Calibrate} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_json_controller_a98972901221d243c92e1344adab52d29}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_aa64294812025ca87c3e3550b4a481720}{virtual Status {\bfseries process\+Debug} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_json_controller_aa64294812025ca87c3e3550b4a481720}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a8651e8746ec0178e6755bb33ccace7e9}{virtual Status {\bfseries process\+Dimension} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)=0}\label{classfirestep_1_1_json_controller_a8651e8746ec0178e6755bb33ccace7e9}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_aad0012ee127086fc26f24bb16474a799}{virtual Status {\bfseries process\+Display} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_json_controller_aad0012ee127086fc26f24bb16474a799}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a3b17dbe58969ed24ce43de28cc2ec1f4}{virtual Status {\bfseries process\+E\+E\+P\+R\+O\+M} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_json_controller_a3b17dbe58969ed24ce43de28cc2ec1f4}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_ac53a572f0e97b3fade095091ecbec47d}{virtual Status {\bfseries process\+E\+E\+P\+R\+O\+M\+Value} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key, const char $\ast$addr)}\label{classfirestep_1_1_json_controller_ac53a572f0e97b3fade095091ecbec47d}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a193d58f79d46163316dc6520172873be}{virtual Status {\bfseries process\+Home} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)=0}\label{classfirestep_1_1_json_controller_a193d58f79d46163316dc6520172873be}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a1a065c8490127a1722d4746d80fb7ddf}{virtual Status {\bfseries process\+I\+O} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key, bool pull\+Up=false)}\label{classfirestep_1_1_json_controller_a1a065c8490127a1722d4746d80fb7ddf}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_af6211759689e5f895a584b5d1f9b15ef}{virtual Status {\bfseries process\+I\+O\+Pin} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key, bool pull\+Up)}\label{classfirestep_1_1_json_controller_af6211759689e5f895a584b5d1f9b15ef}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a6ebf943b4d72b23bc691427993711e63}{virtual Status {\bfseries process\+Mark} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_json_controller_a6ebf943b4d72b23bc691427993711e63}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a4b24a4eb2b560f67a2b05cfc6de0ffb8}{virtual Status {\bfseries process\+Motor} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key, char group)}\label{classfirestep_1_1_json_controller_a4b24a4eb2b560f67a2b05cfc6de0ffb8}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_aba71d8b07eb77cd80b0bb96d2a7d4c67}{virtual Status {\bfseries process\+Move} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)=0}\label{classfirestep_1_1_json_controller_aba71d8b07eb77cd80b0bb96d2a7d4c67}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_ac3fd3ce1124de17ae8ff272a2dfaa2a9}{virtual Status {\bfseries process\+Pin} (Json\+Object \&jobj, const char $\ast$key, Pin\+Type \&pin, int16\+\_\+t mode, int16\+\_\+t value=L\+O\+W)}\label{classfirestep_1_1_json_controller_ac3fd3ce1124de17ae8ff272a2dfaa2a9}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_ac0fc6e48c99ee31bf82b1915b2dade75}{virtual Status {\bfseries process\+Position} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)=0}\label{classfirestep_1_1_json_controller_ac0fc6e48c99ee31bf82b1915b2dade75}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_adf94382ea3d8cbd30ae8b10980b4bbb6}{virtual Status {\bfseries process\+Probe} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)=0}\label{classfirestep_1_1_json_controller_adf94382ea3d8cbd30ae8b10980b4bbb6}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_ab8fa4e528e77669b5fb9fbd8078560de}{virtual Status {\bfseries process\+Probe\+Data} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_json_controller_ab8fa4e528e77669b5fb9fbd8078560de}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_af184788b4e2fee1e820b8c2dd180e5c7}{virtual Status {\bfseries process\+Program} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_json_controller_af184788b4e2fee1e820b8c2dd180e5c7}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a4a696fb7b779e5223224224d99de1c51}{virtual Status {\bfseries process\+Stroke} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_json_controller_a4a696fb7b779e5223224224d99de1c51}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a37b35033be6e43d4681402fe5771a6cd}{virtual Status {\bfseries process\+Sys} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_json_controller_a37b35033be6e43d4681402fe5771a6cd}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a1dadb5a54b51ae0d6987a2c13eec3b1a}{virtual Status {\bfseries process\+Test} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_json_controller_a1dadb5a54b51ae0d6987a2c13eec3b1a}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a5719064f51231ec7352716e80154272c}{virtual Status {\bfseries process\+Tmc} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_json_controller_a5719064f51231ec7352716e80154272c}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a91863b815502ebe3a64c58272a995a33}{virtual Status {\bfseries process\+\_\+id} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_json_controller_a91863b815502ebe3a64c58272a995a33}
+
+\item 
+\hypertarget{classfirestep_1_1_json_controller_a563707aedbfe5720942326aa890cb342}{virtual Status {\bfseries traverse\+Stroke} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&stroke)}\label{classfirestep_1_1_json_controller_a563707aedbfe5720942326aa890cb342}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfirestep_1_1_json_controller_aba224062a07e57d7afaaca88f4f48370}{\hyperlink{classfirestep_1_1_machine}{Machine} \& {\bfseries machine}}\label{classfirestep_1_1_json_controller_aba224062a07e57d7afaaca88f4f48370}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Json\+Controller.\+h\item 
+Json\+Controller.\+cpp\end{DoxyCompactItemize}

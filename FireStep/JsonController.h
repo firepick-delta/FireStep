@@ -7,6 +7,11 @@
 #include "Machine.h"
 #include "JsonCommand.h"
 #include "DeltaCalculator.h"
+#include <tmc2130.h>
+
+extern Tmc2130 axisX;
+extern Tmc2130 axisY;
+extern Tmc2130 axisZ;
 
 namespace firestep {
 
@@ -43,6 +48,10 @@ protected:
     virtual Status processStroke(JsonCommand &jcmd, JsonObject& jobj, const char* key);
     virtual Status processSys(JsonCommand& jcmd, JsonObject& jobj, const char* key);
     virtual Status processTest(JsonCommand& jcmd, JsonObject& jobj, const char* key);
+
+    //Tmc2130 addition -NJ
+    virtual Status processTmc(JsonCommand& jcmd, JsonObject& jobj, const char* key);
+    
     virtual Status process_id(JsonCommand& jcmd, JsonObject& jobj, const char* key);
     virtual Status traverseStroke(JsonCommand &jcmd, JsonObject &stroke);
 

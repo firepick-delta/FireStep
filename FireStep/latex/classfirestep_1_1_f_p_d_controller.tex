@@ -1,0 +1,84 @@
+\hypertarget{classfirestep_1_1_f_p_d_controller}{\section{firestep\+:\+:F\+P\+D\+Controller Class Reference}
+\label{classfirestep_1_1_f_p_d_controller}\index{firestep\+::\+F\+P\+D\+Controller@{firestep\+::\+F\+P\+D\+Controller}}
+}
+
+
+Inheritance diagram for firestep\+:\+:F\+P\+D\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classfirestep_1_1_f_p_d_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for firestep\+:\+:F\+P\+D\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfirestep_1_1_f_p_d_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_a454af68839decada4629fd40454bf1dc}{{\bfseries F\+P\+D\+Controller} (\hyperlink{classfirestep_1_1_machine}{Machine} \&machine)}\label{classfirestep_1_1_f_p_d_controller_a454af68839decada4629fd40454bf1dc}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_acb0505b40ced4c9d25ffc54ed119ec83}{\hyperlink{classfirestep_1_1_x_y_z3_d}{X\+Y\+Z3\+D} {\bfseries get\+X\+Y\+Z3\+D} ()}\label{classfirestep_1_1_f_p_d_controller_acb0505b40ced4c9d25ffc54ed119ec83}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_a33cdaa55e8e64a44b05aaf54d506f66f}{virtual const char $\ast$ {\bfseries name} ()}\label{classfirestep_1_1_f_p_d_controller_a33cdaa55e8e64a44b05aaf54d506f66f}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_aed5b4cee634eadd56ce6b05a322fa97e}{virtual void {\bfseries on\+Topology\+Changed} ()}\label{classfirestep_1_1_f_p_d_controller_aed5b4cee634eadd56ce6b05a322fa97e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_a1b0c93f2e1444bf994b84744450ea5ed}{Status {\bfseries initialize\+Probe\+\_\+\+M\+T\+O\+\_\+\+F\+P\+D} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key, bool clear)}\label{classfirestep_1_1_f_p_d_controller_a1b0c93f2e1444bf994b84744450ea5ed}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_a183bdf8187896f0f348951172b3d6a00}{virtual Status {\bfseries initialize\+Home} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key, bool clear)}\label{classfirestep_1_1_f_p_d_controller_a183bdf8187896f0f348951172b3d6a00}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_aea1fe915de671d24c63457175cbc8b4b}{Status {\bfseries finalize\+Probe\+\_\+\+M\+T\+O\+\_\+\+F\+P\+D} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_f_p_d_controller_aea1fe915de671d24c63457175cbc8b4b}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_a3ec03c9dda441548c65ed322181ea6c8}{Status {\bfseries finalize\+Home} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_f_p_d_controller_a3ec03c9dda441548c65ed322181ea6c8}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_ac63ea83d6a9f94cbb783d55fa6325404}{Status {\bfseries process\+Calibrate\+Core} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key, \hyperlink{classfirestep_1_1_f_p_d_calibrate_home}{F\+P\+D\+Calibrate\+Home} \&cal, bool output)}\label{classfirestep_1_1_f_p_d_controller_ac63ea83d6a9f94cbb783d55fa6325404}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_af320324c335545085a7e4c34128070d9}{virtual Status {\bfseries process\+Mark} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_f_p_d_controller_af320324c335545085a7e4c34128070d9}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_a10e47c83caae217920b8113f5f03b97e}{virtual Status {\bfseries process\+Calibrate} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$keycal)}\label{classfirestep_1_1_f_p_d_controller_a10e47c83caae217920b8113f5f03b97e}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_acaffcae5cb21f4caa986097dcbc98d06}{virtual Status {\bfseries process\+Home} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_f_p_d_controller_acaffcae5cb21f4caa986097dcbc98d06}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_acc1a8f014cc048249f8a021dc56df685}{virtual Status {\bfseries process\+Position} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_f_p_d_controller_acc1a8f014cc048249f8a021dc56df685}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_a5569d32e75cc338582233f7306c9f67e}{virtual Status {\bfseries process\+Probe} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_f_p_d_controller_a5569d32e75cc338582233f7306c9f67e}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_a5d0ffeb2eb45d27e05cba3b92bd4c41b}{virtual Status {\bfseries process\+Dimension} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_f_p_d_controller_a5d0ffeb2eb45d27e05cba3b92bd4c41b}
+
+\item 
+\hypertarget{classfirestep_1_1_f_p_d_controller_ab13174b90ccd66e022b0d11f79fe896d}{virtual Status {\bfseries process\+Move} (\hyperlink{classfirestep_1_1_json_command}{Json\+Command} \&jcmd, Json\+Object \&jobj, const char $\ast$key)}\label{classfirestep_1_1_f_p_d_controller_ab13174b90ccd66e022b0d11f79fe896d}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+F\+P\+D\+Controller.\+h\item 
+F\+P\+D\+Controller.\+cpp\end{DoxyCompactItemize}

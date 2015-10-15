@@ -302,6 +302,20 @@ extern const char OP_zc[];
 extern const char OP_zm[];
 extern const char OP_zr[];
 
+//TMC2130 ===================================================================================
+extern const char OP_tmcbegin[];
+extern const char OP_tmcihold[];
+extern const char OP_tmcirun[];
+extern const char OP_tmcihdly[];
+extern const char OP_tmctpwrdn[];
+extern const char OP_tmctpwmth[];
+extern const char OP_tmcthigh[];
+extern const char OP_tmccconf[];
+extern const char OP_tmcpconf[];
+extern const char OP_tmcload[];
+extern const char OP_tmctstep[];
+extern const char OP_tmcpscale[];
+
 } // namespace firestep
 
 

@@ -1,0 +1,357 @@
+\hypertarget{classfirestep_1_1_machine}{\section{firestep\+:\+:Machine Class Reference}
+\label{classfirestep_1_1_machine}\index{firestep\+::\+Machine@{firestep\+::\+Machine}}
+}
+
+
+Inheritance diagram for firestep\+:\+:Machine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classfirestep_1_1_machine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for firestep\+:\+:Machine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfirestep_1_1_machine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfirestep_1_1_machine_a4b0eee05edc1cdd59749b27099a8fdee}{void {\bfseries setup} (Pin\+Config cfg)}\label{classfirestep_1_1_machine_a4b0eee05edc1cdd59749b27099a8fdee}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a60063b1edb804c45b0b10babf539582a}{int32\+\_\+t {\bfseries hash} ()}\label{classfirestep_1_1_machine_a60063b1edb804c45b0b10babf539582a}
+
+\item 
+virtual Status \hyperlink{classfirestep_1_1_machine_a581b2333ca877f4ea4c020eaaaf485f3}{step} (const \hyperlink{classfirestep_1_1_quad}{Quad}$<$ Step\+D\+V $>$ \&\hyperlink{classfirestep_1_1_machine_a01596c1eb82ee853417f77404317c4ed}{pulse})
+\item 
+\hypertarget{classfirestep_1_1_machine_a97d0850669e905e5adca4933f649342d}{bool {\bfseries is\+Core\+Pin} (int16\+\_\+t pin)}\label{classfirestep_1_1_machine_a97d0850669e905e5adca4933f649342d}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a3c5a08b9a838939ab4d58b474dd53fc4}{bool {\bfseries is\+At\+Limit} (Pin\+Type pin)}\label{classfirestep_1_1_machine_a3c5a08b9a838939ab4d58b474dd53fc4}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a87a7f34fb93980c64fa04f36ff86eae3}{int8\+\_\+t {\bfseries pulse\+Pin} (int16\+\_\+t pin\+Step, int8\+\_\+t n)}\label{classfirestep_1_1_machine_a87a7f34fb93980c64fa04f36ff86eae3}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_ac40d24bb9d52ecac4c0370221c9364ff}{Status {\bfseries step\+Fast} (\hyperlink{classfirestep_1_1_quad}{Quad}$<$ Step\+D\+V $>$ \&\hyperlink{classfirestep_1_1_machine_a01596c1eb82ee853417f77404317c4ed}{pulse})}\label{classfirestep_1_1_machine_ac40d24bb9d52ecac4c0370221c9364ff}
+
+\item 
+virtual Status \hyperlink{classfirestep_1_1_machine_ad3cfb55e4071b4d20855175beb21ed6a}{step\+Direction} (const \hyperlink{classfirestep_1_1_quad}{Quad}$<$ Step\+D\+V $>$ \&\hyperlink{classfirestep_1_1_machine_a01596c1eb82ee853417f77404317c4ed}{pulse})
+\item 
+Status \hyperlink{classfirestep_1_1_machine_a01596c1eb82ee853417f77404317c4ed}{pulse} (\hyperlink{classfirestep_1_1_quad}{Quad}$<$ Step\+Coord $>$ \&pulses)
+\item 
+\hypertarget{classfirestep_1_1_machine_a78860fbc2ac4433bc2f690db1019d8b9}{void {\bfseries set\+Pin} (Pin\+Type \&pin\+Dst, Pin\+Type pin\+Src, int16\+\_\+t mode, int16\+\_\+t value=L\+O\+W)}\label{classfirestep_1_1_machine_a78860fbc2ac4433bc2f690db1019d8b9}
+
+\item 
+\hyperlink{classfirestep_1_1_quad}{Quad}$<$ Step\+Coord $>$ \hyperlink{classfirestep_1_1_machine_abb9ab1d2cc47dca81eed644f0cc73a05}{get\+Motor\+Position} ()
+\item 
+void \hyperlink{classfirestep_1_1_machine_a6a92108622bf3dd555c32ffbea7b0f7a}{set\+Motor\+Position} (const \hyperlink{classfirestep_1_1_quad}{Quad}$<$ Step\+Coord $>$ \&position)
+\item 
+\hypertarget{classfirestep_1_1_machine_a28830b2f79fac4a0432edaf6b9a27101}{virtual Status {\bfseries home} (Status status)}\label{classfirestep_1_1_machine_a28830b2f79fac4a0432edaf6b9a27101}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a5dd121622a9f9284e51bfa0c1428c792}{virtual Status {\bfseries probe} (Status status, Delay\+Mics delay=-\/1)}\label{classfirestep_1_1_machine_a5dd121622a9f9284e51bfa0c1428c792}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a63a5c312904451636ec96ec143d3f1fd}{Status {\bfseries set\+Axis\+Index} (Motor\+Index i\+Motor, Axis\+Index i\+Axis)}\label{classfirestep_1_1_machine_a63a5c312904451636ec96ec143d3f1fd}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a48b2fc0944ac40ec8ecd06d6d877b682}{Axis\+Index {\bfseries get\+Axis\+Index} (Motor\+Index i\+Motor)}\label{classfirestep_1_1_machine_a48b2fc0944ac40ec8ecd06d6d877b682}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a22d975f5164145e181bdd1a879816082}{\hyperlink{classfirestep_1_1_axis}{Axis} \& {\bfseries get\+Motor\+Axis} (Motor\+Index i\+Motor)}\label{classfirestep_1_1_machine_a22d975f5164145e181bdd1a879816082}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a62bdc431a0fe53a0da676f97da35f744}{Motor\+Index {\bfseries motor\+Of\+Name} (const char $\ast$name)}\label{classfirestep_1_1_machine_a62bdc431a0fe53a0da676f97da35f744}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a5288737d66d3117e4593af57831d7e57}{Axis\+Index {\bfseries axis\+Of\+Name} (const char $\ast$name)}\label{classfirestep_1_1_machine_a5288737d66d3117e4593af57831d7e57}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_ad38b0d760dd6eda13d06876192c6418e}{Status {\bfseries set\+Pin\+Config} (Pin\+Config pc)}\label{classfirestep_1_1_machine_ad38b0d760dd6eda13d06876192c6418e}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a773c07a6e2d06a51d836b996c6c45a5a}{Pin\+Config {\bfseries get\+Pin\+Config} ()}\label{classfirestep_1_1_machine_a773c07a6e2d06a51d836b996c6c45a5a}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a44d29a2c0cd0c9469d3eb4d4d7ea1cd9}{char $\ast$ {\bfseries save\+Sys\+Config} (char $\ast$out, size\+\_\+t max\+Len)}\label{classfirestep_1_1_machine_a44d29a2c0cd0c9469d3eb4d4d7ea1cd9}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a07825c242d26746ac674ec433ee1461a}{char $\ast$ {\bfseries save\+Dim\+Config} (char $\ast$out, size\+\_\+t max\+Len)}\label{classfirestep_1_1_machine_a07825c242d26746ac674ec433ee1461a}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_afdb1abb94c1d775d317b83aefc355f37}{Status {\bfseries idle} (Status status)}\label{classfirestep_1_1_machine_afdb1abb94c1d775d317b83aefc355f37}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a5c6d3c34db64ebbb576522e37ea2703e}{Status {\bfseries sync} (Status status)}\label{classfirestep_1_1_machine_a5c6d3c34db64ebbb576522e37ea2703e}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a8d98e99157176991d51f752913ccb448}{void {\bfseries enable\+E\+E\+User} (bool enable)}\label{classfirestep_1_1_machine_a8d98e99157176991d51f752913ccb448}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a5a7088ff22ea433073b82551523dae3d}{bool {\bfseries is\+E\+E\+User\+Enabled} ()}\label{classfirestep_1_1_machine_a5a7088ff22ea433073b82551523dae3d}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_affe2e3dbc49b0c0d970258694ecadf1a}{void {\bfseries load\+Delta\+Calculator} ()}\label{classfirestep_1_1_machine_affe2e3dbc49b0c0d970258694ecadf1a}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a34117b40d793c078f3daca80203142a2}{P\+H5\+T\+Y\+P\+E {\bfseries get\+Home\+Angle} ()}\label{classfirestep_1_1_machine_a34117b40d793c078f3daca80203142a2}
+
+\item 
+void \hyperlink{classfirestep_1_1_machine_a93b092c0652cb3abbe52169d41063462}{set\+Home\+Angle} (P\+H5\+T\+Y\+P\+E degrees)
+\item 
+void \hyperlink{classfirestep_1_1_machine_a85fbaf148788ffbdfe297d50a916238e}{set\+Home\+Angle\+From\+Pulses} (Step\+Coord pulse\+Count)
+\item 
+\hypertarget{classfirestep_1_1_machine_a094267b4480a43f65a66683bc510e5e7}{uint8\+\_\+t {\bfseries pullup\+Mode} (uint8\+\_\+t mask)}\label{classfirestep_1_1_machine_a094267b4480a43f65a66683bc510e5e7}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfirestep_1_1_machine_a782abcc195edda445e1e9adc7c384162}{Pin\+Config {\bfseries pin\+Config}}\label{classfirestep_1_1_machine_a782abcc195edda445e1e9adc7c384162}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_abae6d8416a6384963ac1012a214572b3}{bool {\bfseries auto\+Home}}\label{classfirestep_1_1_machine_abae6d8416a6384963ac1012a214572b3}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a0f41310222b04a7abb2ee9a1c6058622}{bool {\bfseries pin\+Enable\+High}}\label{classfirestep_1_1_machine_a0f41310222b04a7abb2ee9a1c6058622}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_aeada7a6b5b4b0c946123bbf08bebcbd2}{bool {\bfseries invert\+Lim}}\label{classfirestep_1_1_machine_aeada7a6b5b4b0c946123bbf08bebcbd2}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_aa0474d91c7cb5d7b5ee30caeab6089e1}{bool {\bfseries json\+Pretty\+Print}}\label{classfirestep_1_1_machine_aa0474d91c7cb5d7b5ee30caeab6089e1}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a83b501a8ac2e7ed939b68d82d7eb3500}{bool {\bfseries auto\+Sync}}\label{classfirestep_1_1_machine_a83b501a8ac2e7ed939b68d82d7eb3500}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a7378e019cbc4f093014380907b86f247}{uint8\+\_\+t {\bfseries pullups}}\label{classfirestep_1_1_machine_a7378e019cbc4f093014380907b86f247}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a861720eaf7bf69fd15cc627cb23bb3c6}{uint8\+\_\+t {\bfseries debounce}}\label{classfirestep_1_1_machine_a861720eaf7bf69fd15cc627cb23bb3c6}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_ad525546aaffe13bccdf9dcc60e16c441}{Axis\+Index {\bfseries motor} \mbox{[}M\+O\+T\+O\+R\+\_\+\+C\+O\+U\+N\+T\mbox{]}}\label{classfirestep_1_1_machine_ad525546aaffe13bccdf9dcc60e16c441}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a4e4ec1e88094cc5b1eb6653e3215a2b4}{\hyperlink{classfirestep_1_1_display}{Display} {\bfseries null\+Display}}\label{classfirestep_1_1_machine_a4e4ec1e88094cc5b1eb6653e3215a2b4}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_af3d6a945d3d0c113da664180adc276a4}{\hyperlink{classfirestep_1_1_delta_calculator}{Delta\+Calculator} {\bfseries delta}}\label{classfirestep_1_1_machine_af3d6a945d3d0c113da664180adc276a4}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_ad084b7aa048ca39bed1a557b182d9657}{int32\+\_\+t {\bfseries v\+Max}}\label{classfirestep_1_1_machine_ad084b7aa048ca39bed1a557b182d9657}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a3ac29f0ff5ecd48f906f0d58c87618e2}{P\+H5\+T\+Y\+P\+E {\bfseries tv\+Max}}\label{classfirestep_1_1_machine_a3ac29f0ff5ecd48f906f0d58c87618e2}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a5e829fb20e97d8a3e074ef31e533300f}{P\+H5\+T\+Y\+P\+E {\bfseries marks} \mbox{[}M\+A\+R\+K\+\_\+\+C\+O\+U\+N\+T\mbox{]}}\label{classfirestep_1_1_machine_a5e829fb20e97d8a3e074ef31e533300f}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a8a3cb1cddacdf32c2aba381d41168291}{int16\+\_\+t {\bfseries fast\+Search\+Pulses}}\label{classfirestep_1_1_machine_a8a3cb1cddacdf32c2aba381d41168291}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_ae9b87b2b7e6a1f6f754ca3573012ec90}{Delay\+Mics {\bfseries search\+Delay}}\label{classfirestep_1_1_machine_ae9b87b2b7e6a1f6f754ca3573012ec90}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_aeaa15e457e2a0a2d06b5eb94cc7c30cc}{Pin\+Type {\bfseries pin\+Status}}\label{classfirestep_1_1_machine_aeaa15e457e2a0a2d06b5eb94cc7c30cc}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a7ada64ab2c8e26c01f651ab702fcbc9a}{Topology {\bfseries topology}}\label{classfirestep_1_1_machine_a7ada64ab2c8e26c01f651ab702fcbc9a}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_aafef61ac19def0959a437f9a30f7e1a0}{Output\+Mode {\bfseries output\+Mode}}\label{classfirestep_1_1_machine_aafef61ac19def0959a437f9a30f7e1a0}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_ae59dfe1c13fc670adc9db67d262b4251}{P\+H5\+T\+Y\+P\+E {\bfseries home\+Z}}\label{classfirestep_1_1_machine_ae59dfe1c13fc670adc9db67d262b4251}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a4ce2a330efae08862e360ea5b77662ce}{\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\hypertarget{structfirestep_1_1_machine_1_1@0_aa6c6c56359249bb772065b48d2e56ace}{\>\hyperlink{classfirestep_1_1_op_probe}{OpProbe} {\bfseries probe}\\
+\} {\bfseries op}}\label{classfirestep_1_1_machine_a4ce2a330efae08862e360ea5b77662ce}
+\\
+
+\end{tabbing}\item 
+\hypertarget{classfirestep_1_1_machine_a44dff6bd11e54b706abdfdb050ec74fb}{int32\+\_\+t {\bfseries sync\+Hash}}\label{classfirestep_1_1_machine_a44dff6bd11e54b706abdfdb050ec74fb}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a6e2c54f3212c9f7fd94d522ec34ec2b8}{\hyperlink{classfirestep_1_1_z_plane}{Z\+Plane} {\bfseries bed}}\label{classfirestep_1_1_machine_a6e2c54f3212c9f7fd94d522ec34ec2b8}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_aed37572e2b290ad6161c8fc7ae710e5d}{\hyperlink{classfirestep_1_1_axis}{Axis} {\bfseries axis} \mbox{[}A\+X\+I\+S\+\_\+\+C\+O\+U\+N\+T\mbox{]}}\label{classfirestep_1_1_machine_aed37572e2b290ad6161c8fc7ae710e5d}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a1c540689673c5b7a2f87fcbeb51fd085}{\hyperlink{classfirestep_1_1_display}{Display} $\ast$ {\bfseries p\+Display}}\label{classfirestep_1_1_machine_a1c540689673c5b7a2f87fcbeb51fd085}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a7fad0e4de154ed6080abb38b28ec98d2}{\hyperlink{classfirestep_1_1_axis}{Axis} $\ast$ {\bfseries motor\+Axis} \mbox{[}M\+O\+T\+O\+R\+\_\+\+C\+O\+U\+N\+T\mbox{]}}\label{classfirestep_1_1_machine_a7fad0e4de154ed6080abb38b28ec98d2}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_af8e84a16355ae7cbe66fc07cd867fabe}{\hyperlink{classfirestep_1_1_stroke}{Stroke} {\bfseries stroke}}\label{classfirestep_1_1_machine_af8e84a16355ae7cbe66fc07cd867fabe}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classfirestep_1_1_machine_a3d4a78ce5a3e31218091ed65fe8c2d66}{Status {\bfseries step\+Probe} (int16\+\_\+t delay)}\label{classfirestep_1_1_machine_a3d4a78ce5a3e31218091ed65fe8c2d66}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a8d45421f93b20f9da67efedd2b7a6d6a}{Status {\bfseries set\+Pin\+Config\+\_\+\+E\+M\+C02} ()}\label{classfirestep_1_1_machine_a8d45421f93b20f9da67efedd2b7a6d6a}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_af7be83bcf646409bb3d7b4d68e594157}{Status {\bfseries set\+Pin\+Config\+\_\+\+R\+A\+M\+P\+S1\+\_\+4} ()}\label{classfirestep_1_1_machine_af7be83bcf646409bb3d7b4d68e594157}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_ae27ae53599b2946350c42ecd8bf94e8f}{void {\bfseries backoff\+Home} (int16\+\_\+t delay)}\label{classfirestep_1_1_machine_ae27ae53599b2946350c42ecd8bf94e8f}
+
+\item 
+\hypertarget{classfirestep_1_1_machine_a889d28ee63d82baa8161e734af33a1a5}{Step\+Coord {\bfseries step\+Home} (Step\+Coord pulses\+Per\+Axis, int16\+\_\+t delay)}\label{classfirestep_1_1_machine_a889d28ee63d82baa8161e734af33a1a5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classfirestep_1_1_machine_abb9ab1d2cc47dca81eed644f0cc73a05}{\index{firestep\+::\+Machine@{firestep\+::\+Machine}!get\+Motor\+Position@{get\+Motor\+Position}}
+\index{get\+Motor\+Position@{get\+Motor\+Position}!firestep\+::\+Machine@{firestep\+::\+Machine}}
+\subsubsection[{get\+Motor\+Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quad}$<$ Step\+Coord $>$ Machine\+::get\+Motor\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classfirestep_1_1_machine_abb9ab1d2cc47dca81eed644f0cc73a05}
+Return position of currently driven axes bound to motors 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classfirestep_1_1_machine_abb9ab1d2cc47dca81eed644f0cc73a05_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classfirestep_1_1_machine_a01596c1eb82ee853417f77404317c4ed}{\index{firestep\+::\+Machine@{firestep\+::\+Machine}!pulse@{pulse}}
+\index{pulse@{pulse}!firestep\+::\+Machine@{firestep\+::\+Machine}}
+\subsubsection[{pulse}]{\setlength{\rightskip}{0pt plus 5cm}Status Machine\+::pulse (
+\begin{DoxyParamCaption}
+\item[{{\bf Quad}$<$ Step\+Coord $>$ \&}]{pulses}
+\end{DoxyParamCaption}
+)}}\label{classfirestep_1_1_machine_a01596c1eb82ee853417f77404317c4ed}
+Send stepper pulses without updating position. This is important for homing, test and calibration Return S\+T\+A\+T\+U\+S\+\_\+\+O\+K on success 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classfirestep_1_1_machine_a01596c1eb82ee853417f77404317c4ed_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classfirestep_1_1_machine_a93b092c0652cb3abbe52169d41063462}{\index{firestep\+::\+Machine@{firestep\+::\+Machine}!set\+Home\+Angle@{set\+Home\+Angle}}
+\index{set\+Home\+Angle@{set\+Home\+Angle}!firestep\+::\+Machine@{firestep\+::\+Machine}}
+\subsubsection[{set\+Home\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}void Machine\+::set\+Home\+Angle (
+\begin{DoxyParamCaption}
+\item[{P\+H5\+T\+Y\+P\+E}]{degrees}
+\end{DoxyParamCaption}
+)}}\label{classfirestep_1_1_machine_a93b092c0652cb3abbe52169d41063462}
+Set the home angle and pulses 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classfirestep_1_1_machine_a93b092c0652cb3abbe52169d41063462_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classfirestep_1_1_machine_a85fbaf148788ffbdfe297d50a916238e}{\index{firestep\+::\+Machine@{firestep\+::\+Machine}!set\+Home\+Angle\+From\+Pulses@{set\+Home\+Angle\+From\+Pulses}}
+\index{set\+Home\+Angle\+From\+Pulses@{set\+Home\+Angle\+From\+Pulses}!firestep\+::\+Machine@{firestep\+::\+Machine}}
+\subsubsection[{set\+Home\+Angle\+From\+Pulses}]{\setlength{\rightskip}{0pt plus 5cm}void Machine\+::set\+Home\+Angle\+From\+Pulses (
+\begin{DoxyParamCaption}
+\item[{Step\+Coord}]{pulse\+Count}
+\end{DoxyParamCaption}
+)}}\label{classfirestep_1_1_machine_a85fbaf148788ffbdfe297d50a916238e}
+Set the home pulses and angle. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classfirestep_1_1_machine_a85fbaf148788ffbdfe297d50a916238e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classfirestep_1_1_machine_a6a92108622bf3dd555c32ffbea7b0f7a}{\index{firestep\+::\+Machine@{firestep\+::\+Machine}!set\+Motor\+Position@{set\+Motor\+Position}}
+\index{set\+Motor\+Position@{set\+Motor\+Position}!firestep\+::\+Machine@{firestep\+::\+Machine}}
+\subsubsection[{set\+Motor\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Machine\+::set\+Motor\+Position (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quad}$<$ Step\+Coord $>$ \&}]{position}
+\end{DoxyParamCaption}
+)}}\label{classfirestep_1_1_machine_a6a92108622bf3dd555c32ffbea7b0f7a}
+Set position of currently driven axes bound to motors 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classfirestep_1_1_machine_a6a92108622bf3dd555c32ffbea7b0f7a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classfirestep_1_1_machine_a581b2333ca877f4ea4c020eaaaf485f3}{\index{firestep\+::\+Machine@{firestep\+::\+Machine}!step@{step}}
+\index{step@{step}!firestep\+::\+Machine@{firestep\+::\+Machine}}
+\subsubsection[{step}]{\setlength{\rightskip}{0pt plus 5cm}Status Machine\+::step (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quad}$<$ Step\+D\+V $>$ \&}]{pulse}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfirestep_1_1_machine_a581b2333ca877f4ea4c020eaaaf485f3}
+The \hyperlink{classfirestep_1_1_machine_a581b2333ca877f4ea4c020eaaaf485f3}{step()} method is the \char`\"{}stepper inner loop\char`\"{} that creates the stepper pulse train to Q\+U\+A\+D\+\_\+\+E\+L\+E\+M\+E\+N\+T\+S steppers. The pulse parameter must have a value of -\/1, 0, or 1 for each stepper.
+
+Steppers can't be driven too quickly--they stall. Each axis has a us\+Delay field that specifies a minimum delay between pulses. 
+
+Implements \hyperlink{classfirestep_1_1_quad_stepper}{firestep\+::\+Quad\+Stepper}.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classfirestep_1_1_machine_a581b2333ca877f4ea4c020eaaaf485f3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classfirestep_1_1_machine_ad3cfb55e4071b4d20855175beb21ed6a}{\index{firestep\+::\+Machine@{firestep\+::\+Machine}!step\+Direction@{step\+Direction}}
+\index{step\+Direction@{step\+Direction}!firestep\+::\+Machine@{firestep\+::\+Machine}}
+\subsubsection[{step\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}Status Machine\+::step\+Direction (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quad}$<$ Step\+D\+V $>$ \&}]{pulse}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classfirestep_1_1_machine_ad3cfb55e4071b4d20855175beb21ed6a}
+Set direction based on the sign of each pulse value and check bounds 
+
+Implements \hyperlink{classfirestep_1_1_quad_stepper}{firestep\+::\+Quad\+Stepper}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Machine.\+h\item 
+Machine.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="firestep::Machine::pulse" name="firestep::Machine::pulse">
+<area shape="rect" id="node2" href="$classfirestep_1_1_machine.html#abb9ab1d2cc47dca81eed644f0cc73a05" title="firestep::Machine::\lgetMotorPosition" alt="" coords="196,5,327,46"/>
+<area shape="rect" id="node3" href="$classfirestep_1_1_machine.html#a6a92108622bf3dd555c32ffbea7b0f7a" title="firestep::Machine::\lsetMotorPosition" alt="" coords="196,70,327,111"/>
+<area shape="rect" id="node4" href="$classfirestep_1_1_machine.html#a581b2333ca877f4ea4c020eaaaf485f3" title="firestep::Machine::step" alt="" coords="184,136,339,163"/>
+</map>

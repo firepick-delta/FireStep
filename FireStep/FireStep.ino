@@ -1,8 +1,12 @@
-#include <Adafruit_NeoPixel.h>
+#define TMC2130 1
 
+#include <Adafruit_NeoPixel.h>
+#include <SPI.h>
 #include <ArduinoJson.h>
 #include <ph5.h>
+#include <tmc2130.h>
 #include "Arduino.h"
+#include "TmcThread.h"
 #include "MachineThread.h"
 #include "NeoPixel.h"
 
@@ -11,6 +15,7 @@
 #define PIN_CONFIG PC1_EMC02
 
 firestep::MachineThread machineThread; // FireStep command interpreter
+firestep::TmcThread tmcThread;
 
 /////////// NeoPixel display driver /////////////
 #define NEOPIXEL_LEDS 16
@@ -22,11 +27,25 @@ firestep::NeoPixel neoPixel(NEOPIXEL_LEDS);
 #define LED_PIN PC2_LED_PIN
 #endif
 
+#ifdef TMC2130
+  Tmc2130 axisX = Tmc2130(23);
+  Tmc2130 axisY = Tmc2130(25);
+  Tmc2130 axisZ = Tmc2130(27);
+#endif
+
 void setup() { // run once, when the sketch starts
     // Serial I/O has lowest priority, so you may need to
     // decrease baud rate to fix Serial I/O problems.
     //Serial.begin(38400); // short USB cables
     Serial.begin(19200); // long USB cables
+
+#ifdef TMC2130
+    SPI.begin();
+    //CPOL=0, CPHA=0.  MSB first, per datasheet.  Assuming fsck = 8 MHz
+    SPI.beginTransaction(SPISettings(2000000, MSBFIRST, SPI_MODE0));
+    tmcThread.setup();
+#endif
+
 
     // Bind in NeoPixel display driver
     machineThread.machine.pDisplay = &neoPixel;
