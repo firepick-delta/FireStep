@@ -277,18 +277,34 @@ const char firestep::OP_zm[] PROGMEM = { "zm" };
 const char firestep::OP_zr[] PROGMEM = { "zr" };
 
 //TMC2130 ===================================================================================
-const char firestep::OP_tmcbegin[]  PROGMEM = { "tmcbegin"   };  // Initialize SPI
-const char firestep::OP_tmcihold[]  PROGMEM = { "tmcihold"   };  // Set IHOLD
-const char firestep::OP_tmcirun[]   PROGMEM = { "tmcirun"    };  // Set IRUN
-const char firestep::OP_tmcihdly[]  PROGMEM = { "tmcihdly"   };  // Set IHOLDDELAY
-const char firestep::OP_tmctpwrdn[] PROGMEM = { "tmctpwrdn"  };  // Set TPOWERDOWN
-const char firestep::OP_tmctpwmth[] PROGMEM = { "tmctpwmth"  };  // Set TPWMTHRS
-const char firestep::OP_tmcthigh[]  PROGMEM = { "tmcthigh"   };  // Set THIGH
-const char firestep::OP_tmccconf[]  PROGMEM = { "tmccconf"   };  // Set CHOPCONF bits *** Set in 32-bit register format
-const char firestep::OP_tmcpconf[]  PROGMEM = { "tmcpconf"   };  // Set PWMCONF bits  *** Set in 32-bit register format
-const char firestep::OP_tmcload[]   PROGMEM = { "tmcload"    };  // Read Load measurement
-const char firestep::OP_tmctstep[]  PROGMEM = { "tmctstep"   };  // Read TSTEP
-const char firestep::OP_tmcpscale[] PROGMEM = { "tmcpscale"  };  // Read PWM_SCALE
+const char firestep::OP_tmcenpwm[]  PROGMEM = { "tmcenpwm"   };  // Set  0x00 GCONF.en_pwm_mode
+const char firestep::OP_tmcsh[]     PROGMEM = { "tmcsh"      };  // Set  0x00 GCONF.small_hysteresis
+const char firestep::OP_tmcgstat[]  PROGMEM = { "tmcgstat"   };  // Read 0x01 GSTAT
+const char firestep::OP_tmcversion[] PROGMEM= { "tmcvers"    };  // Read 0x04 IOIN.version
+
+const char firestep::OP_tmcihold[]  PROGMEM = { "tmcihold"   };  // Set  0x10 IHOLD_IRUN.IHOLD
+const char firestep::OP_tmcirun[]   PROGMEM = { "tmcirun"    };  // Set  0x10 IHOLD_IRUN.IRUN
+const char firestep::OP_tmcihdly[]  PROGMEM = { "tmcihdly"   };  // Set  0x10 IHOLD_IRUN.IHOLDDELAY
+const char firestep::OP_tmctpwrdn[] PROGMEM = { "tmctpwrdn"  };  // Set  0x11 TPOWERDOWN
+const char firestep::OP_tmctstep[]  PROGMEM = { "tmctstep"   };  // Read 0x12 TSTEP
+const char firestep::OP_tmctpwmth[] PROGMEM = { "tmctpwmth"  };  // Set  0x13 TPWMTHRS
+
+const char firestep::OP_tmctcthrs[] PROGMEM = { "tmctcthrs"  };  // Set  0x14 TCOOLTHRS
+
+const char firestep::OP_tmcthigh[]  PROGMEM = { "tmcthigh"   };  // Set  0x15 THIGH
+
+const char firestep::OP_tmcmslut[]  PROGMEM = { "tmcmslut"   };  // Set  0x60..69 MSLUT
+const char firestep::OP_tmcmscnt[]  PROGMEM = { "tmcmscnt"   };  // Read 0x6A MSCNT
+const char firestep::OP_tmcmscur[]  PROGMEM = { "tmcmscur"   };  // Read 0x6B MSCURACT
+
+const char firestep::OP_tmccconf[]  PROGMEM = { "tmccconf"   };  // Set  0x6C CHOPCONF bits *** Set in 32-bit register format
+
+const char firestep::OP_tmccoolc[]  PROGMEM = { "tmccoolc"   };  // Set  0x6D COOLCONF bits *** Set in 32-bit register format
+const char firestep::OP_tmcdrvst[]  PROGMEM = { "tmcdrvst"   };  // Read 0x6F DRV_STATUS
+const char firestep::OP_tmcload[]   PROGMEM = { "tmcload"    };  // Read 0x6F DRV_STATUS.Load measurement
+
+const char firestep::OP_tmcpconf[]  PROGMEM = { "tmcpconf"   };  // Set  0x70 PWMCONF bits  *** Set in 32-bit register format
+const char firestep::OP_tmcpscale[] PROGMEM = { "tmcpscale"  };  // Read 0x71 PWM_SCALE
 
 const char src_help[] PROGMEM = {
     "["

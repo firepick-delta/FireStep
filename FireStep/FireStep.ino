@@ -43,7 +43,13 @@ void setup() { // run once, when the sketch starts
     SPI.begin();
     //CPOL=0, CPHA=0.  MSB first, per datasheet.  Assuming fsck = 8 MHz
     SPI.beginTransaction(SPISettings(2000000, MSBFIRST, SPI_MODE0));
-    tmcThread.setup();
+
+    // Initialize SPI interfaces with each axis
+    axisX.begin(false); //Initialize X axis
+    axisY.begin(false); //Initialize Y axis
+    axisZ.begin(false); //Initialize Z axis
+
+    tmcThread.setup(); //Kick off a thread that can read registers and store statistics about them, in the background
 #endif
 
 

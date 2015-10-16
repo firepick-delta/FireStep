@@ -1217,121 +1217,108 @@ Status JsonController::processObj(JsonCommand& jcmd, JsonObject&jobj) {
 Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const char* key) {
   //  Serial.println("Process TMC2130 Command");
   Status status = STATUS_OK;
-  if (strcmp_PS(OP_tmcbegin, key) == 0)            // Initialize drivers
-  {
-    // Initialize SPI interfaces with each axis
-    axisX.begin(false);
-    axisY.begin(false);
-    axisZ.begin(false);
-  }
 
-  else if (strcmp_PS(OP_tmcihold, key) == 0)       // Set IHOLD (uint8_t)
+  // 0x00 - Set GCONF.en_pwm_mode (boolean) ******************************************************************
+  else if (strcmp_PS(OP_tmcenpwm, key) == 0)
+  {
+    boolean mode;
+    status = processField<boolean, boolean>(jobj, key, mode);
+    axisX.set_en_pwm_mode(mode);
+    axisY.set_en_pwm_mode(mode);
+    axisZ.set_en_pwm_mode(mode);
+
+    set_en_pwm_mode(boolean stealthchopEn); //GCONF bit 2
+  }
+  // Set 0x00 GCONF.small_hysteresis (boolean) ******************************************************************
+  else if (strcmp_PS(OP_tmcsh, key) == 0)       
+  {
+    boolean sh;
+    status = processField<boolean, boolean>(jobj, key, sh);
+    axisX.set_small_hysteresis(sh);
+    axisY.set_small_hysteresis(sh);
+    axisZ.set_small_hysteresis(sh);
+  }
+  // Read 0x01 GSTAT ******************************************************************
+  if (strcmp_PS(OP_tmcgstat, key) == 0)
+  {
+    uint32_t x_gstat = axisX.get_gstat_raw();
+    uint32_t y_gstat = axisY.get_gstat_raw();
+    uint32_t z_gstat = axisZ.get_gstat_raw();
+
+    //Return values above via json thingy
+    JsonObject& node = jobj.createNestedObject(key);
+    node.add("x", x_gstat);
+    node.add("y", x_gstat);
+    node.add("z", x_gstat);
+  }
+  // Read 0x04 IOIN.version ******************************************************************
+  if (strcmp_PS(OP_tmcversion, key) == 0)
+  {
+    uint32_t x_version = axisX.get_version();
+    uint32_t y_version = axisY.get_version();
+    uint32_t z_version = axisZ.get_version();
+
+    //Return values above via json thingy
+    JsonObject& node = jobj.createNestedObject(key);
+    node.add("x", x_version);
+    node.add("y", y_version);
+    node.add("z", z_version);
+
+
+  }
+  // Set  0x10 IHOLD_IRUN.IHOLD ******************************************************************
+  else if (strcmp_PS(OP_tmcihold, key) == 0)       
   {
     uint8_t ihold;
     status = processField<uint8_t, int32_t>(jobj, key, ihold);
-    Serial.print("IHOLD: ");
-    Serial.println(ihold, DEC);
+    // Serial.print("IHOLD: ");
+    // Serial.println(ihold, DEC);
 
     // Send to each axis
     axisX.set_ihold(ihold);
     axisY.set_ihold(ihold);
     axisZ.set_ihold(ihold);
   }
-  else if (strcmp_PS(OP_tmcirun, key) == 0)       // Set IRUN (uint8_t)
+  // Set  0x10 IHOLD_IRUN.IRUN ******************************************************************
+  else if (strcmp_PS(OP_tmcirun, key) == 0)
   {
     uint8_t irun;
     status = processField<uint8_t, int32_t>(jobj, key, irun);
-    Serial.print("IRUN: ");
-    Serial.println(irun, DEC);
+    // Serial.print("IRUN: ");
+    // Serial.println(irun, DEC);
 
     // Send to each axis
     axisX.set_irun(irun);
     axisY.set_irun(irun);
     axisZ.set_irun(irun);
   }
-  else if (strcmp_PS(OP_tmcihdly, key) == 0)       // Set IHOLDDELAY (uint8_t)
+  // Set  0x10 IHOLD_IRUN.IHOLDDELAY ******************************************************************
+  else if (strcmp_PS(OP_tmcihdly, key) == 0)
   {
     uint8_t iholddelay;
     status = processField<uint8_t, int32_t>(jobj, key, iholddelay);
-    Serial.print("IHOLDDELAY: ");
-    Serial.println(iholddelay, DEC);
+    // Serial.print("IHOLDDELAY: ");
+    // Serial.println(iholddelay, DEC);
 
     // Send to each axis
     axisX.set_iholddelay(iholddelay);
     axisY.set_iholddelay(iholddelay);
     axisZ.set_iholddelay(iholddelay);
   }
-
-  else if (strcmp_PS(OP_tmctpwrdn, key) == 0)       // Set TPOWERDOWN (uint8_t)
+  // Set  0x11 TPOWERDOWN  ******************************************************************
+  else if (strcmp_PS(OP_tmctpwrdn, key) == 0)
   {
     uint8_t tpowerdown;
     status = processField<uint8_t, int32_t>(jobj, key, tpowerdown);
-    Serial.print("TPOWERDOWN: ");
-    Serial.println(tpowerdown, DEC);
+    // Serial.print("TPOWERDOWN: ");
+    // Serial.println(tpowerdown, DEC);
 
     axisX.set_tpowerdown(tpowerdown);
     axisY.set_tpowerdown(tpowerdown);
     axisZ.set_tpowerdown(tpowerdown);
   }
-  else if (strcmp_PS(OP_tmctpwmth, key) == 0)       // Set TPWMTHRS (uint16_t)
-  {
-    uint16_t tpwmthrs;
-    status = processField<uint16_t, int32_t>(jobj, key, tpwmthrs);
-    Serial.print("TPWMTHRS: ");
-    Serial.println(tpwmthrs, DEC);
-
-    axisX.set_tpwmthrs(tpwmthrs);
-    axisY.set_tpwmthrs(tpwmthrs);
-    axisZ.set_tpwmthrs(tpwmthrs);
-  }
-  else if (strcmp_PS(OP_tmcthigh,  key) == 0)       // Set THIGH (uint16_t)
-  {
-    uint16_t thigh;
-    status = processField<uint16_t, int32_t>(jobj, key, thigh);
-    Serial.print("THIGH: ");
-    Serial.println(thigh, DEC);
-
-    axisX.set_thigh(thigh);
-    axisY.set_thigh(thigh);
-    axisZ.set_thigh(thigh);
-  }
-  else if (strcmp_PS(OP_tmccconf,  key) == 0)       // Set CHOPCONF bits *** (uint32_t hexadecminal register format)
-  {
-    uint32_t rawval;
-    status = processField<uint32_t, int32_t>(jobj, key, rawval);
-    Serial.print("CHOPCONF: ");
-    Serial.println(rawval, HEX);
-    axisX.set_chopconf_raw(rawval);
-    axisY.set_chopconf_raw(rawval);
-    axisZ.set_chopconf_raw(rawval);
-  }
-  else if (strcmp_PS(OP_tmcpconf,  key) == 0)       // Set PWMCONF bits  *** (uint32_t hexadecminal register format)
-  {
-    uint32_t rawval; //Set this to the ASCII HEX value of the returned json param
-    status = processField<uint32_t, int32_t>(jobj, key, rawval);
-    Serial.print("PWMCONF: ");
-    Serial.println(rawval, HEX);
-    axisX.set_pwmconf_raw(rawval);
-    axisY.set_pwmconf_raw(rawval);
-    axisZ.set_pwmconf_raw(rawval);
-  }
-  else if (strcmp_PS(OP_tmcload,   key) == 0)       // Read Load measurement
-  {
-    uint16_t x_loadmeas = axisX.get_loadmeas();
-    uint16_t y_loadmeas = axisY.get_loadmeas();
-    uint16_t z_loadmeas = axisZ.get_loadmeas();
-    //      Serial.println("Load Meas: ");
-    //      Serial.println(  x_loadmeas,DEC);
-    //      Serial.println(  y_loadmeas,DEC);
-    //      Serial.println(z_loadmeas,DEC);
-
-    //Return values above via json thingy
-    JsonObject& node = jobj.createNestedObject(key);
-    node.add("x", x_loadmeas);
-    node.add("y", y_loadmeas);
-    node.add("z", z_loadmeas);
-  }
-  else if (strcmp_PS(OP_tmctstep,  key) == 0)       // Read TSTEP
+  // Read 0x12 TSTEP
+  else if (strcmp_PS(OP_tmctstep,  key) == 0)
   {
     uint16_t x_tstep = axisX.get_tstep();
     uint16_t y_tstep = axisY.get_tstep();
@@ -1347,12 +1334,118 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
     node.add("y", y_tstep);
     node.add("z", z_tstep);
   }
+  // Set  0x13 TPWMTHRS
+  else if (strcmp_PS(OP_tmctpwmth, key) == 0) 
+  {
+    uint16_t tpwmthrs;
+    status = processField<uint16_t, int32_t>(jobj, key, tpwmthrs);
+    // Serial.print("TPWMTHRS: ");
+    // Serial.println(tpwmthrs, DEC);
+
+    axisX.set_tpwmthrs(tpwmthrs);
+    axisY.set_tpwmthrs(tpwmthrs);
+    axisZ.set_tpwmthrs(tpwmthrs);
+  }
+  // Set  0x15 THIGH
+  else if (strcmp_PS(OP_tmcthigh,  key) == 0)
+  {
+    uint16_t thigh;
+    status = processField<uint16_t, int32_t>(jobj, key, thigh);
+    // Serial.print("THIGH: ");
+    // Serial.println(thigh, DEC);
+
+    axisX.set_thigh(thigh);
+    axisY.set_thigh(thigh);
+    axisZ.set_thigh(thigh);
+  }
+  // Set  0x60..69 MSLUT
+  else if (strcmp_PS(OP_tmcmslut,  key) == 0)
+  {
+    axisX.set_mslut();
+    axisY.set_mslut();
+    axisZ.set_mslut();
+  }
+  // Read 0x6A MSCNT
+  else if (strcmp_PS(OP_tmcmscnt,  key) == 0)
+  {
+    uint16_t mscnt_x = axisX.get_mscnt();
+    uint16_t mscnt_y = axisY.get_mscnt();
+    uint16_t mscnt_z = axisZ.get_mscnt();
+    //Return values above via json thingy
+    JsonObject& node = jobj.createNestedObject(key);
+    node.add("x", (uint32_t)mscnt_x);
+    node.add("y", (uint32_t)mscnt_y);
+    node.add("z", (uint32_t)mscnt_z);
+  }
+  // Read 0x6B MSCURACT
+  else if (strcmp_PS(OP_tmcmscur,  key) == 0)
+  {
+    uint32_t mscuract_x = axisX.get_mscuract_raw();
+    uint32_t mscuract_y = axisY.get_mscuract_raw();
+    uint32_t mscuract_z = axisZ.get_mscuract_raw();
+    //Return values above via json thingy
+    JsonObject& node = jobj.createNestedObject(key);
+    node.add("x", mscuract_x);
+    node.add("y", mscuract_y);
+    node.add("z", mscuract_z);
+  }
+  // Set  0x6C CHOPCONF bits *** Set in 32-bit register format
+  else if (strcmp_PS(OP_tmccconf,  key) == 0)
+  {
+    uint32_t rawval;
+    status = processField<uint32_t, uint32_t>(jobj, key, rawval);
+    axisX.set_chopconf_raw(rawval);
+    axisY.set_chopconf_raw(rawval);
+    axisZ.set_chopconf_raw(rawval);
+  }
+  // Set  0x6D COOLCONF bits *** Set in 32-bit register format
+  else if (strcmp_PS(OP_tmccoolc,  key) == 0)
+  {
+    uint32_t rawval;
+    status = processField<uint32_t, uint32_t>(jobj, key, rawval);
+    axisX.set_coolconf_raw(rawval);
+    axisY.set_coolconf_raw(rawval);
+    axisZ.set_coolconf_raw(rawval);
+  }
+  // Read 0x6F DRV_STATUS
+  else if (strcmp_PS(OP_tmcdrvst,  key) == 0)
+  {
+    uint32_t result_x = axisX.get_drv_status_raw();
+    uint32_t result_y = axisY.get_drv_status_raw();
+    uint32_t result_z = axisZ.get_drv_status_raw();
+    //Return values above via json thingy
+    JsonObject& node = jobj.createNestedObject(key);
+    node.add("x", result_y);
+    node.add("y", result_y);
+    node.add("z", result_y);
+  }
+  // Read 0x6F DRV_STATUS.Load measurement
+  else if (strcmp_PS(OP_tmcload,   key) == 0)
+  {
+    uint16_t x_loadmeas = axisX.get_loadmeas();
+    uint16_t y_loadmeas = axisY.get_loadmeas();
+    uint16_t z_loadmeas = axisZ.get_loadmeas();
+    //Return values above via json thingy
+    JsonObject& node = jobj.createNestedObject(key);
+    node.add("x", x_loadmeas);
+    node.add("y", y_loadmeas);
+    node.add("z", z_loadmeas);
+  }
+  // Set  0x70 PWMCONF bits  *** Set in 32-bit register format
+  else if (strcmp_PS(OP_tmcpconf,  key) == 0)
+  {
+    uint32_t rawval; //Set this to the ASCII HEX value of the returned json param
+    status = processField<uint32_t, int32_t>(jobj, key, rawval);
+    axisX.set_pwmconf_raw(rawval);
+    axisY.set_pwmconf_raw(rawval);
+    axisZ.set_pwmconf_raw(rawval);
+  }
+  // Read 0x71 PWM_SCALE
   else if (strcmp_PS(OP_tmcpscale, key) == 0)       // Read PWM_SCALE
   {
     uint16_t x_scale = axisX.get_pwm_scale();
     uint16_t y_scale = axisY.get_pwm_scale();
     uint16_t z_scale = axisZ.get_pwm_scale();
-
     //Return values above via json thingy
     JsonObject& node = jobj.createNestedObject(key);
     node.add("x", x_scale);
