@@ -1254,9 +1254,9 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
   // Read 0x04 IOIN.version ******************************************************************
   if (strcmp_PS(OP_tmcversion, key) == 0)
   {
-    uint32_t x_version = axisX.get_version();
-    uint32_t y_version = axisY.get_version();
-    uint32_t z_version = axisZ.get_version();
+    uint8_t x_version = axisX.get_version();
+    uint8_t y_version = axisY.get_version();
+    uint8_t z_version = axisZ.get_version();
 
     //Return values above via json thingy
     JsonObject& node = jobj.createNestedObject(key);
@@ -1270,7 +1270,7 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
   else if (strcmp_PS(OP_tmcihold, key) == 0)       
   {
     uint8_t ihold;
-    status = processField<uint8_t, int32_t>(jobj, key, ihold);
+    status = processField<uint8_t, uint32_t>(jobj, key, ihold);
     // Serial.print("IHOLD: ");
     // Serial.println(ihold, DEC);
 
@@ -1283,7 +1283,7 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
   else if (strcmp_PS(OP_tmcirun, key) == 0)
   {
     uint8_t irun;
-    status = processField<uint8_t, int32_t>(jobj, key, irun);
+    status = processField<uint8_t, uint32_t>(jobj, key, irun);
     // Serial.print("IRUN: ");
     // Serial.println(irun, DEC);
 
@@ -1296,7 +1296,7 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
   else if (strcmp_PS(OP_tmcihdly, key) == 0)
   {
     uint8_t iholddelay;
-    status = processField<uint8_t, int32_t>(jobj, key, iholddelay);
+    status = processField<uint8_t, uint32_t>(jobj, key, iholddelay);
     // Serial.print("IHOLDDELAY: ");
     // Serial.println(iholddelay, DEC);
 
@@ -1309,7 +1309,7 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
   else if (strcmp_PS(OP_tmctpwrdn, key) == 0)
   {
     uint8_t tpowerdown;
-    status = processField<uint8_t, int32_t>(jobj, key, tpowerdown);
+    status = processField<uint8_t, uint32_t>(jobj, key, tpowerdown);
     // Serial.print("TPOWERDOWN: ");
     // Serial.println(tpowerdown, DEC);
 
@@ -1320,9 +1320,9 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
   // Read 0x12 TSTEP
   else if (strcmp_PS(OP_tmctstep,  key) == 0)
   {
-    uint16_t x_tstep = axisX.get_tstep();
-    uint16_t y_tstep = axisY.get_tstep();
-    uint16_t z_tstep = axisZ.get_tstep();
+    uint32_t x_tstep = axisX.get_tstep();
+    uint32_t y_tstep = axisY.get_tstep();
+    uint32_t z_tstep = axisZ.get_tstep();
     //      Serial.println("TSTEP: ");
     //      Serial.println(x_tstep,DEC);
     //      Serial.println(y_tstep,DEC);
@@ -1337,8 +1337,8 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
   // Set  0x13 TPWMTHRS
   else if (strcmp_PS(OP_tmctpwmth, key) == 0) 
   {
-    uint16_t tpwmthrs;
-    status = processField<uint16_t, int32_t>(jobj, key, tpwmthrs);
+    uint32_t tpwmthrs;
+    status = processField<uint32_t, uint32_t>(jobj, key, tpwmthrs);
     // Serial.print("TPWMTHRS: ");
     // Serial.println(tpwmthrs, DEC);
 
@@ -1349,8 +1349,8 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
   // Set  0x15 THIGH
   else if (strcmp_PS(OP_tmcthigh,  key) == 0)
   {
-    uint16_t thigh;
-    status = processField<uint16_t, int32_t>(jobj, key, thigh);
+    uint32_t thigh;
+    status = processField<uint32_t, uint32_t>(jobj, key, thigh);
     // Serial.print("THIGH: ");
     // Serial.println(thigh, DEC);
 
@@ -1377,7 +1377,7 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
     node.add("y", (uint32_t)mscnt_y);
     node.add("z", (uint32_t)mscnt_z);
   }
-  // Read 0x6B MSCURACT
+  // Read 0x6B MSCURACT (raw) 
   else if (strcmp_PS(OP_tmcmscur,  key) == 0)
   {
     uint32_t mscuract_x = axisX.get_mscuract_raw();
@@ -1407,7 +1407,7 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
     axisY.set_coolconf_raw(rawval);
     axisZ.set_coolconf_raw(rawval);
   }
-  // Read 0x6F DRV_STATUS
+  // Read 0x6F DRV_STATUS (raw 32-bit)
   else if (strcmp_PS(OP_tmcdrvst,  key) == 0)
   {
     uint32_t result_x = axisX.get_drv_status_raw();
@@ -1435,7 +1435,7 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
   else if (strcmp_PS(OP_tmcpconf,  key) == 0)
   {
     uint32_t rawval; //Set this to the ASCII HEX value of the returned json param
-    status = processField<uint32_t, int32_t>(jobj, key, rawval);
+    status = processField<uint32_t, uint32_t>(jobj, key, rawval);
     axisX.set_pwmconf_raw(rawval);
     axisY.set_pwmconf_raw(rawval);
     axisZ.set_pwmconf_raw(rawval);
@@ -1443,9 +1443,9 @@ Status JsonController::processTmc(JsonCommand& jcmd, JsonObject& jobj, const cha
   // Read 0x71 PWM_SCALE
   else if (strcmp_PS(OP_tmcpscale, key) == 0)       // Read PWM_SCALE
   {
-    uint16_t x_scale = axisX.get_pwm_scale();
-    uint16_t y_scale = axisY.get_pwm_scale();
-    uint16_t z_scale = axisZ.get_pwm_scale();
+    uint8_t x_scale = axisX.get_pwm_scale();
+    uint8_t y_scale = axisY.get_pwm_scale();
+    uint8_t z_scale = axisZ.get_pwm_scale();
     //Return values above via json thingy
     JsonObject& node = jobj.createNestedObject(key);
     node.add("x", x_scale);
